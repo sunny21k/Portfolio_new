@@ -7,22 +7,18 @@ export const workData = [
   {
     title: "AI Powered Waste Management App",
     description: "Full Stack",
-    bgImage: "/work-1.png",
   },
   {
     title: "NBA Player Performance Predictor",
     description: "Machine Learning",
-    bgImage: "/work-2.png",
   },
   {
     title: "AI Blog Generator Web App",
     description: "Full Stack",
-    bgImage: "/work-3.png",
   },
   {
     title: "UI/UX designing",
     description: "UI/UX Design",
-    bgImage: "/work-4.png",
   },
 ];
 

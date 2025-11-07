@@ -1,7 +1,6 @@
 import { workData } from '@/assets/assets'
 import { IoIosSend } from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
-import Image from 'next/image';
 import React from 'react'
 
 const Work = () => {
@@ -23,24 +22,23 @@ const Work = () => {
         {workData.map((project, index) => (
           <div
             key={index}
-            className='relative aspect-square rounded-lg overflow-hidden cursor-pointer group shadow-lg hover:shadow-2xl transition'
-            style={{ backgroundImage: `url(${project.bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className='absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-5'>
-              <h2 className='text-white text-lg font-semibold'>{project.title}</h2>
-              <p className='text-gray-200 text-sm mb-3'>{project.description}</p>
-              <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-purple-300 transition'>
-                <IoIosSend className='w-5 h-5 text-black' />
-              </div>
+            className='relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-md hover:shadow-2xl 
+            transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col justify-end p-6'
+          >
+            <h2 className='text-white text-md font-bold mb-2'>{project.title}</h2>
+            <p className='text-gray-300 text-sm mb-4'>{project.description}</p>
+            <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-[2px_2px_0_#000] 
+            group-hover:bg-purple-400 transform group-hover:-translate-y-1 transition-all duration-300'>
+              <IoIosSend className='w-5 h-5 text-black' />
             </div>
           </div>
         ))}
       </div>
 
-        <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full
-        py-3 px-10 mx-auto my-20 hover:bg-purple-100 duration-500'>
-          Show more <MdArrowOutward className="w-3 h-3" />
-        </a>
-
+      <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full
+      py-3 px-10 mx-auto my-20 hover:bg-purple-100 duration-500'>
+        Show more <MdArrowOutward className="w-3 h-3" />
+      </a>
     </div>
   )
 }
