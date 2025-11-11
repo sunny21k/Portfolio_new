@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosSend } from "react-icons/io";
 
 const Contact = () => {
+
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "dea82089-8406-4e21-ba4f-b15be0952df9");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+  };
+
   return (
     <div id='contact' className="w-full px-[10%] py-20 scroll-mt-20">
       {/* Section Titles */}
@@ -14,15 +31,17 @@ const Contact = () => {
         Have a project, idea, or just want to say hello? Fill out the form below or reach me through the contact info.
       </p>
 
-    <form className="max-w-2xl mx-auto flex flex-col gap-6">
+    <form onSubmit={onSubmit} className="max-w-2xl mx-auto flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row gap-4">
             <input
+            name='name'
             type="text"
             placeholder="Enter your name"
             required
             className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-200 transition"
             />
             <input
+            name='email'
             type="email"
             placeholder="Enter your email"
             required
@@ -31,6 +50,7 @@ const Contact = () => {
         </div>
 
         <textarea
+            name='message'
             rows="6"
             placeholder="Enter your message"
             required
@@ -45,7 +65,7 @@ const Contact = () => {
         Submit
         <IoIosSend className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
         </button>
-        <p>Sending...</p>
+        <p className='mt-4'>{result}</p>
     </form>
     </div>
   )
