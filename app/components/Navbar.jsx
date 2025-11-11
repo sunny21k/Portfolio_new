@@ -63,9 +63,6 @@ const Navbar = () => {
 
         {/* Right Controls */}
         <div className="flex items-center gap-4">
-          <button className="hover:text-purple-500 transition">
-            <IoMoonOutline className="w-6 h-6" />
-          </button>
 
           <a
             href="#contact"

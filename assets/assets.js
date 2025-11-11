@@ -5,20 +5,24 @@ import { SiTailwindcss, SiNextdotjs, SiExpress, SiOpencv, SiPandas, SiScikitlear
 
 export const workData = [
   {
-    title: "AI Powered Waste Management App",
+    title: "AI Powered Waste Management Web App",
     description: "Full Stack",
+    link: "https://github.com/sunny21k/WasteWatch"
   },
   {
     title: "NBA Player Performance Predictor",
     description: "Machine Learning",
+    link: "https://github.com/sunny21k/Ai_Blog"
   },
   {
     title: "AI Blog Generator Web App",
     description: "Full Stack",
+    link: "https://github.com/sunny21k/NbaPlayerPrediciton"
   },
   {
-    title: "UI/UX designing",
-    description: "UI/UX Design",
+    title: "Meal Planner Web App",
+    description: "Full Stack",
+    link: "https://github.com/sunny21k/MealMate",
   },
 ];
 

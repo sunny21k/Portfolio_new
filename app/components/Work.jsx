@@ -20,8 +20,11 @@ const Work = () => {
 
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8'>
         {workData.map((project, index) => (
-          <div
+          <a
             key={index}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className='relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-md hover:shadow-2xl 
             transform hover:scale-105 transition-all duration-300 bg-gradient-to-br from-gray-900 via-black to-gray-800 flex flex-col justify-end p-6'
           >
@@ -31,7 +34,7 @@ const Work = () => {
             group-hover:bg-purple-400 transform group-hover:-translate-y-1 transition-all duration-300'>
               <IoIosSend className='w-5 h-5 text-black' />
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
